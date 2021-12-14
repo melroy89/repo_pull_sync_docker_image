@@ -36,11 +36,11 @@ repo_pull_sync:
 
 Create Project Access token fist:
 
-* `Settings -> Access Tokens`. Check 'api' as the scope. Save the secret token for later.
+* Go to: `Settings -> Access Tokens`. Check 'api' as the scope. Save the secret token for later.
 
-Create a CI/CD Schedule:
+Create a new Schedule:
 
-* Create a new schedule, via: `CI/CD -> Schedules -> New schedule`. With the following 3 variables:
+* Go to: `CI/CD -> Schedules -> New schedule`. With the following 3 variables:
   * REMOTE_URL (example: `https://github.com/project/repo.git`)
   * REMOTE_BRANCH (example: `master`)
   * ACCESS_TOKEN: (see Access Token in the first step! Example: `gplat-234hcand9q289rba89dghqa892agbd89arg2854`, )
