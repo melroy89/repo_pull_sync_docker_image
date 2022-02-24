@@ -30,7 +30,7 @@ repo_pull_sync:
     - git remote remove upstream || true
     - git remote add upstream $REMOTE_URL
     - git fetch upstream
-    - git merge upstream/$REMOTE_BRANCH
+    - git rebase upstream/$REMOTE_BRANCH
     - git push "https://${GITLAB_USER_LOGIN}:${ACCESS_TOKEN}@${CI_REPOSITORY_URL#*@}" "HEAD:${CI_DEFAULT_BRANCH}"
 ```
 
