@@ -1,11 +1,11 @@
-# Mirroring repository Pull - Docker Image + GitLab Job
+# GitLab Repo Mirror Pull Snyc - Docker Image + GitLab Job
 
 Useful Docker image that can be used in combination with GitLab (Scheduled) Pipelines for pulling remote repositories.
 
-Normally, GitLab Community Edition (GitLab CE) only offers you to mirroring repositories via `push` direction. This Docker image with yaml file + scheduler allows you to sync a repository via `pull` mirror direction!  
+Normally, GitLab Community Edition (GitLab CE) _only_ offers you to mirroring repositories via `push` direction. This Docker image with yaml file + scheduler allows you to sync a repository via **`pull` mirror direction**!  
 Have the GitLab mirror pull feature for free! Use the steps below.
 
-If the rebase fails the pipeline aborts (no git push).
+If the rebase fails the pipeline aborts automatically (so no git push).
 
 ## Docker Image
 
@@ -35,6 +35,8 @@ repo_pull_sync:
     - git rebase upstream/$REMOTE_BRANCH
     - git push "https://${GITLAB_USER_LOGIN}:${ACCESS_TOKEN}@${CI_REPOSITORY_URL#*@}" "HEAD:${CI_DEFAULT_BRANCH}"
 ```
+
+*Note:* If you want to use `git merge` instead of `git rebase` that is up to you. You can change the script above to your needs.
 
 ## Create GitLab Schedule
 
