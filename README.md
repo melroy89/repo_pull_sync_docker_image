@@ -48,8 +48,8 @@ Create Project Access token fist:
 Create a new GitLab Schedule:
 
 * Go to: `CI/CD -> Schedules -> New schedule`. With the following 3 variables:
-  * REMOTE_URL (example: `https://github.com/project/repo.git`)
-  * REMOTE_BRANCH (example: `master`)
-  * ACCESS_TOKEN: (see Access Token in the first step! Example: `gplat-234hcand9q289rba89dghqa892agbd89arg2854`)
+  * `REMOTE_URL` (example: `https://github.com/project/repo.git`)
+  * `REMOTE_BRANCH` (example: `master`)
+  * `ACCESS_TOKEN` (see Access Token in the first step! Example: `gplat-234hcand9q289rba89dghqa892agbd89arg2854`)
 * Save pipeline schedule
 * Press the Play button to trigger the Schedule prematurely (for testing purpose)
