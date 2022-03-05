@@ -1,6 +1,6 @@
 # GitLab Repo Mirror Pull Snyc - Docker Image + GitLab Job
 
-Useful Docker image that can be used in combination with GitLab (Scheduled) Pipelines for pulling remote repositories.
+Useful Docker image that can be used in combination with a [GitLab Scheduled Pipelines](https://docs.gitlab.com/ee/ci/pipelines/schedules.html) for pulling remote repositories.
 
 Normally, GitLab Community Edition (GitLab CE) _only_ offers you to mirroring repositories via `push` direction. This Docker image with yaml file + scheduler allows you to sync a repository via **`pull` mirror direction**!  
 Have the GitLab mirror pull feature for free! Use the steps below.
@@ -13,7 +13,7 @@ We are following Docker image in our pipeline: [danger89/repo_mirror_pull](https
 
 ## GitLab Pipeline
 
-GitLab Pipeline yaml file (`.gitlab-ci.yml`). No changes are needed, the variables can be changed in the GitLab Schedule (see next heading).
+[GitLab Scheduled Pipeline](https://docs.gitlab.com/ee/ci/pipelines/schedules.html) yaml file (`.gitlab-ci.yml`). No changes are needed, the variables can be changed in the GitLab Schedule (see next heading).
 
 ```yml
 repo_pull_sync:
@@ -44,7 +44,7 @@ Create Project Access token fist:
 
 * Go to: `Settings -> Access Tokens`. Check 'api' as the scope. Save the secret token for later.
 
-Create a new Schedule:
+Create a new GitLab Schedule:
 
 * Go to: `CI/CD -> Schedules -> New schedule`. With the following 3 variables:
   * REMOTE_URL (example: `https://github.com/project/repo.git`)
